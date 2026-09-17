@@ -204,6 +204,267 @@ footer{background:var(--dk);color:rgba(255,255,255,.62);padding:72px 0 0}
 .bxs:hover{background:var(--gold);color:var(--dk)}
 @media(max-width:1100px){.pkg-main{grid-template-columns:1fr}.bk-sidebar{position:static}.inc-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.gal-grid{grid-template-columns:repeat(2,1fr)}.hl-grid{grid-template-columns:1fr 1fr}}
+
+
+  /* ================================
+   MOBILE RESPONSIVE FIXES
+   Infinity Travels
+================================ */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Navigation */
+    .nav {
+        height: 65px;
+        padding: 0 20px;
+    }
+
+    .nav-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .lw .lb {
+        font-size: 1rem;
+    }
+
+    .lw .lt {
+        font-size: .5rem;
+        letter-spacing: 3px;
+    }
+
+    .ham {
+        display: flex;
+    }
+
+
+    /* Hero Section */
+    .pkg-hero-w {
+        min-height: 75vh;
+        padding: 90px 20px 35px;
+        margin-top:65px;
+        align-items:flex-end;
+    }
+
+    .ph-c2 {
+        width:100%;
+    }
+
+    .ph-c2 h1 {
+        font-size:2rem;
+        line-height:1.25;
+    }
+
+
+    .bc {
+        font-size:.7rem;
+        flex-wrap:wrap;
+    }
+
+
+    /* Hero Pills */
+    .pills {
+        gap:8px;
+        margin-top:15px;
+    }
+
+    .pill {
+        font-size:.75rem;
+        padding:7px 12px;
+    }
+
+
+    /* Main Package Layout */
+    .pkg-main {
+        display:block;
+        padding:35px 20px;
+    }
+
+
+    /* Tabs */
+    .tab-nav {
+        overflow-x:auto;
+        scrollbar-width:none;
+        margin-bottom:25px;
+    }
+
+    .tab-nav::-webkit-scrollbar {
+        display:none;
+    }
+
+    .tab-btn {
+        padding:12px 16px;
+        font-size:.78rem;
+    }
+
+
+    /* Overview */
+    .ov p {
+        font-size:.9rem;
+        line-height:1.7;
+    }
+
+
+    /* Highlights */
+    .hl-grid {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+
+    /* Itinerary */
+    .itin-item {
+        gap:12px;
+    }
+
+    .itin-dot {
+        width:38px;
+        height:38px;
+        min-width:38px;
+    }
+
+    .itin-dot span {
+        font-size:.6rem;
+    }
+
+
+    .ib h4 {
+        font-size:.9rem;
+    }
+
+    .ib p {
+        font-size:.8rem;
+    }
+
+
+    /* Include / Exclude */
+    .inc-grid {
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+
+    /* Gallery */
+    .gal-grid {
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .gal-item {
+        height:120px;
+    }
+
+
+    /* Booking Card */
+    .bk-sidebar {
+        margin-top:35px;
+        position:relative;
+        top:auto;
+    }
+
+
+    .bk-card {
+        padding:22px;
+        border-radius:20px;
+    }
+
+    .bk-price {
+        font-size:2rem;
+    }
+
+
+    .bk-btn,
+    .bk-wa {
+        width:100%;
+        font-size:.85rem;
+    }
+
+
+    /* Related Packages */
+    .rel-sec {
+        padding:45px 20px;
+    }
+
+    .rel-grid {
+        grid-template-columns:1fr;
+    }
+
+
+    /* Footer */
+    footer {
+        padding-top:45px;
+    }
+
+    .ft {
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+
+    .fbot {
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .flinks {
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+
+    /* WhatsApp Button */
+    .wf {
+        right:18px;
+        bottom:18px;
+    }
+
+    .wfb {
+        width:52px;
+        height:52px;
+        font-size:1.3rem;
+    }
+
+}
+
+
+/* Extra Small Phones */
+@media(max-width:400px){
+
+    .pkg-hero-w {
+        min-height:80vh;
+    }
+
+    .ph-c2 h1 {
+        font-size:1.7rem;
+    }
+
+
+    .pills {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+
+    .pill {
+        width:max-content;
+    }
+
+
+    .gal-grid {
+        grid-template-columns:1fr;
+    }
+
+}
+
+  
 </style>
 </head>
 <body>
