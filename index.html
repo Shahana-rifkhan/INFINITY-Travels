@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Infinity Travels — Sri Lanka's most trusted travel agency. Bespoke holiday packages to Bali, Maldives, Thailand, Dubai, Japan, France and 10 more destinations. Best price guarantee."/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+<title>Infinity Travels | The Art of Extraordinary Journeys</title>
+<style>
+:root{
+--dk:#061A3A;--navy:#082B5C;--navy2:#0B4F8A;
+--gold:#2FA8FF;--gold-lt:#D9EEFF;--gold-dk:#1672B8;
+--cyan:#00AEEF;--wh:#FFFFFF;--cream:#FAF8F4;
+--stone:#F2F0EB;--mist:#E8E6E0;
+--tx:#1A1A2E;--tx2:#4A4863;--tx3:#7A7898;
+--r:18px;--r2:28px;
+--fs:'Times New Roman',Times,serif;
+--fb:Calibri,'Trebuchet MS',Arial,sans-serif;
+--ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--tx);background:var(--wh);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:var(--fs)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.skip{position:absolute;top:-100%;left:0;background:var(--cyan);color:#fff;padding:12px 20px;z-index:9999;font-weight:700;border-radius:0 0 8px 0}.skip:focus{top:0}
+.container{max-width:1280px;margin:0 auto;padding:0 5%}
+section{padding:90px 0}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 5%;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,248,244,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 32px rgba(0,0,0,.07);transition:height .3s}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{width:44px;height:44px;border-radius:50%;object-fit:contain;border:2px solid rgba(201,169,122,.4)}
+.lw{display:flex;flex-direction:column;line-height:1}
+.lw .lt{font-family:var(--fb);font-size:.58rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:var(--gold);display:block}
+.lw .lb{font-family:var(--fs);font-size:1.2rem;font-weight:700;color:var(--navy)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:.85rem;font-weight:600;padding:7px 13px;border-radius:6px;color:var(--tx2);position:relative;transition:all .3s}
+.nav-links a:not(.nc)::after{content:'';position:absolute;bottom:2px;left:13px;right:13px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a:not(.nc):hover,.nav-links a.active:not(.nc){color:var(--gold)}
+.nav-links a:not(.nc):hover::after,.nav-links a.active:not(.nc)::after{transform:scaleX(1)}
+.nc{background:var(--gold)!important;color:var(--dk)!important;padding:8px 20px!important;border-radius:50px!important;font-weight:700!important;box-shadow:0 4px 18px rgba(201,169,122,.3)!important;transition:all .3s!important}
+.nc:hover{background:var(--gold-dk)!important;transform:translateY(-2px)!important}
+.nc::after{display:none!important}
+.ham{display:none;flex-direction:column;gap:5px;padding:8px}
+.ham span{display:block;width:22px;height:1.5px;background:var(--navy);border-radius:2px;transition:all .3s}
+.ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham[aria-expanded=true] span:nth-child(2){opacity:0}
+.ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:0;top:72px;z-index:999;background:rgba(250,248,244,.99);backdrop-filter:blur(20px);padding:32px 5%;transform:translateY(-110%);opacity:0;transition:all .4s;pointer-events:none}
+.mob-nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mob-nav a{display:block;font-size:1rem;font-weight:600;color:var(--tx);padding:15px 0;border-bottom:1px solid var(--mist);transition:color .3s}
+.mob-nav a:hover{color:var(--gold)}
+.mob-cta{margin-top:20px!important;background:var(--gold)!important;color:var(--dk)!important;border-radius:50px;text-align:center;padding:14px!important;font-weight:700!important}
+
+/* PAGE HERO */
+.ph{min-height:52vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:104px 5% 60px;margin-top:72px;overflow:hidden}
+.ph-bg{position:absolute;inset:0}.ph-bg img{width:100%;height:100%;object-fit:cover}
+.ph-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,15,.88),rgba(13,11,44,.76))}
+.ph-c{position:relative;z-index:2}
+.bc{font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.bc a{color:var(--gold)}.bc i{font-size:.55rem;color:rgba(255,255,255,.35)}
+.ph h1{font-size:clamp(2.4rem,5.5vw,4rem);color:var(--wh);margin-bottom:12px;letter-spacing:-.2px}
+.ph h1 em{font-style:italic;color:var(--gold)}
+.ph p{color:rgba(255,255,255,.78);font-size:1rem;max-width:550px;margin:0 auto}
+
+/* SECTION HELPERS */
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:22px;height:1px;background:var(--gold)}
+.st{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--navy);margin-bottom:14px;line-height:1.15}
+.sub{font-size:.98rem;color:var(--tx3);line-height:1.8;max-width:550px}
+.shc{text-align:center}.shc .sub{margin:0 auto}
+.gr{width:56px;height:2px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));border-radius:2px;margin-top:16px}
+.gr.c{margin:16px auto 0}
+
+/* BUTTONS */
+.bg{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dk);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb);box-shadow:0 5px 20px rgba(201,169,122,.35)}
+.bg:hover{background:var(--gold-dk);transform:translateY(-3px);color:var(--wh);box-shadow:0 10px 28px rgba(201,169,122,.45)}
+.bn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--wh);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bn:hover{background:var(--gold);color:var(--dk);transform:translateY(-3px)}
+.bo{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--navy);padding:12px 32px;border-radius:50px;font-size:.88rem;font-weight:700;border:2px solid var(--navy);transition:all .35s;font-family:var(--fb)}
+.bo:hover{background:var(--navy);color:var(--wh)}
+.bw{display:inline-flex;align-items:center;gap:8px;background:var(--wh);color:var(--navy);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bw:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.bwa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:var(--wh);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bwa:hover{background:#1ebe5c;transform:translateY(-3px);color:var(--wh)}
+
+/* FORMS */
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.fg label{font-size:.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px}
+.fg input,.fg select{border:none;border-bottom:2px solid var(--mist);padding:9px 0;font-family:var(--fb);font-size:.9rem;color:var(--tx);outline:none;background:transparent;transition:border .3s;width:100%}
+.fg input:focus,.fg select:focus{border-bottom-color:var(--gold)}
+.fg textarea{width:100%;border:2px solid var(--mist);border-radius:var(--r);padding:11px 13px;font-family:var(--fb);font-size:.9rem;color:var(--tx);outline:none;transition:border .3s;resize:vertical;height:115px;background:transparent}
+.fg textarea:focus{border-color:var(--gold)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* FOOTER */
+footer{background:var(--dk);color:rgba(255,255,255,.62);padding:72px 0 0}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.fb p{font-size:.85rem;line-height:1.78;margin-top:14px;max-width:270px}
+.fs{display:flex;gap:10px;margin-top:20px}
+.fi{width:36px;height:36px;border-radius:9px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:all .3s}
+.fi:hover{background:var(--gold);border-color:var(--gold);color:var(--dk)}
+.fc h5{font-family:var(--fs);color:var(--wh);font-size:.98rem;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid rgba(201,169,122,.2);display:inline-block}
+.fc ul{display:flex;flex-direction:column;gap:9px}
+.fc ul a{font-size:.82rem;transition:all .3s;display:flex;align-items:center;gap:6px}
+.fc ul a i{font-size:.58rem;color:var(--gold)}
+.fc ul a:hover{color:var(--gold);padding-left:4px}
+.fci{display:flex;gap:9px;align-items:flex-start;margin-bottom:11px;font-size:.82rem}
+.fci i{color:var(--gold);margin-top:2px;min-width:13px}
+.fbot{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{font-size:.77rem}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:.77rem;transition:color .3s}
+.flinks a:hover{color:var(--gold)}
+
+/* WHATSAPP */
+.wf{position:fixed;bottom:26px;right:26px;z-index:9998}
+.wfb{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:var(--wh);font-size:1.55rem;box-shadow:0 6px 24px rgba(37,211,102,.5);text-decoration:none;animation:wap 3s infinite;transition:transform .3s}
+.wfb:hover{transform:scale(1.1);color:var(--wh)}
+@keyframes wap{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.5)}50%{box-shadow:0 6px 24px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,.1)}}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rvl{opacity:0;transform:translateX(-30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rvl.on{opacity:1;transform:none}
+.rvr{opacity:0;transform:translateX(30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rvr.on{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:880px){.ft{grid-template-columns:1fr 1fr}.fr{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}section{padding:68px 0}.ft{grid-template-columns:1fr}}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hbg{position:absolute;inset:0}.hbg img{width:100%;height:100%;object-fit:cover;animation:hzoom 20s linear infinite alternate}
+@keyframes hzoom{from{transform:scale(1.05) translateY(0)}to{transform:scale(1) translateY(-18px)}}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,15,.82) 0%,rgba(13,11,44,.65) 40%,rgba(0,80,130,.45) 100%)}
+.hc{position:relative;z-index:2;text-align:center;padding:130px 5% 90px;max-width:920px;margin:0 auto}
+.heyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;animation:fup .9s .1s var(--ease) both}
+.heline{width:44px;height:1px;background:var(--gold)}
+.hetxt{font-family:var(--fb);font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:4px;text-transform:uppercase}
+.hc h1{font-size:clamp(2.8rem,6.5vw,5.8rem);color:var(--wh);line-height:1.1;letter-spacing:-1px;margin-bottom:22px;animation:fup .9s .2s var(--ease) both;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hc h1 em{font-style:italic;background:linear-gradient(135deg,var(--gold-lt),var(--gold),var(--gold-dk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdesc{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 38px;line-height:1.78;animation:fup .9s .3s var(--ease) both}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fup .9s .4s var(--ease) both}
+.hstats{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:2;flex-wrap:wrap;justify-content:center;animation:fup .9s .6s var(--ease) both}
+.hst{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:50px;padding:10px 20px;display:flex;align-items:center;gap:10px;color:var(--wh)}
+.hst-icon{color:var(--gold);font-size:.88rem}
+.hst-n{font-family:var(--fs);font-size:1.08rem;font-weight:700}
+.hst-l{font-size:.7rem;opacity:.72}
+@keyframes fup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.marquee-strip{background:var(--gold);padding:13px 0;overflow:hidden}
+.mt{display:flex;white-space:nowrap;animation:ms 26s linear infinite}
+.mt:hover{animation-play-state:paused}
+.mi{display:flex;align-items:center;gap:11px;padding:0 28px;font-family:var(--fb);font-size:.74rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dk)}
+.md{width:3px;height:3px;border-radius:50%;background:var(--dk);opacity:.35}
+@keyframes ms{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.trust-bar{background:var(--dk);padding:0}
+.tinner{display:flex;align-items:stretch;max-width:100%;border-top:1px solid rgba(255,255,255,.06)}
+.ti{flex:1;display:flex;align-items:center;justify-content:center;gap:13px;padding:26px 18px;border-right:1px solid rgba(255,255,255,.06);transition:background .3s}
+.ti:last-child{border-right:none}
+.ti:hover{background:rgba(255,255,255,.03)}
+.tiicon{width:44px;height:44px;border-radius:12px;background:rgba(201,169,122,.12);border:1px solid rgba(201,169,122,.22);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0}
+.titxt strong{display:block;color:var(--wh);font-size:.93rem;font-weight:700;font-family:var(--fs)}
+.titxt span{color:rgba(255,255,255,.48);font-size:.76rem}
+.search-s{background:var(--cream);padding:52px 0}
+.sc{background:var(--wh);border-radius:var(--r2);box-shadow:0 22px 56px rgba(0,0,0,.09);padding:32px 36px;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;border:1px solid var(--mist)}
+.sf{flex:1;min-width:145px}
+.sf label{display:block;font-size:.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.sf select,.sf input{width:100%;border:none;border-bottom:2px solid var(--mist);padding:9px 0;font-family:var(--fb);font-size:.92rem;color:var(--tx);outline:none;background:transparent;transition:border .3s}
+.sf select:focus,.sf input:focus{border-bottom-color:var(--gold)}
+.sbtn{background:var(--navy);color:var(--wh);border-radius:var(--r);padding:11px 28px;font-size:.9rem;font-weight:700;font-family:var(--fb);display:flex;align-items:center;gap:8px;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.sbtn:hover{background:var(--gold);color:var(--dk);transform:translateY(-2px)}
+/* DESTINATIONS */
+.dg{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.dc{position:relative;border-radius:var(--r2);overflow:hidden;cursor:pointer}
+.dc.tall{grid-row:span 2}
+.dimg{width:100%;height:100%;min-height:270px;object-fit:cover;transition:transform .8s var(--ease);display:block}
+.dc.tall .dimg{min-height:560px}
+.dc:hover .dimg{transform:scale(1.06)}
+.dov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,15,.88) 0%,rgba(5,5,15,.2) 55%,rgba(5,5,15,.08) 100%);transition:background .5s}
+.dc:hover .dov{background:linear-gradient(to top,rgba(5,5,15,.93) 0%,rgba(5,5,15,.4) 60%,rgba(5,5,15,.15) 100%)}
+.db{position:absolute;bottom:0;left:0;right:0;padding:24px}
+.dcat{font-family:var(--fb);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:7px;display:block}
+.dname{font-family:var(--fs);font-size:1.65rem;color:var(--wh);font-weight:700;line-height:1.2;margin-bottom:5px}
+.dc.tall .dname{font-size:2.3rem}
+.ddur{font-size:.78rem;color:rgba(255,255,255,.62);margin-bottom:12px}
+.dcta{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dk);padding:7px 18px;border-radius:50px;font-size:.76rem;font-weight:700;transition:all .3s;transform:translateY(6px);opacity:0}
+.dc:hover .dcta{transform:none;opacity:1}
+/* PACKAGES */
+.pkg-s{background:var(--cream)}
+.pkg-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{background:var(--wh);border-radius:var(--r2);overflow:hidden;border:1px solid var(--mist);box-shadow:0 3px 20px rgba(0,0,0,.05);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.pc:hover{transform:translateY(-10px);box-shadow:0 22px 56px rgba(0,0,0,.11)}
+.pi{height:225px;overflow:hidden;position:relative}
+.pi img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.pc:hover .pi img{transform:scale(1.07)}
+.poi{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,15,.6) 0%,transparent 55%)}
+.pb2{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--dk);padding:4px 12px;border-radius:50px;font-size:.68rem;font-weight:700;letter-spacing:.5px}
+.pp2{position:absolute;bottom:14px;right:14px;background:rgba(255,255,255,.95);color:var(--navy);padding:4px 12px;border-radius:50px;font-size:.74rem;font-weight:700}
+.pb{padding:20px}
+.pn{font-family:var(--fs);font-size:1.2rem;color:var(--navy);font-weight:700;margin-bottom:7px;line-height:1.25}
+.pm{display:flex;gap:14px;margin-bottom:10px}
+.pm span{font-size:.77rem;color:var(--tx3);display:flex;align-items:center;gap:4px}
+.pm i{color:var(--gold);font-size:.74rem}
+.pd{font-size:.85rem;color:var(--tx2);line-height:1.65;margin-bottom:12px}
+.ptg{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.ptag{background:var(--stone);color:var(--tx2);padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:600}
+.pf{display:flex;align-items:center;justify-content:space-between;padding-top:13px;border-top:1px solid var(--mist)}
+.ppr{font-family:var(--fs);font-size:1.25rem;font-weight:700;color:var(--navy)}
+.ppr small{font-size:.67rem;font-family:var(--fb);color:var(--tx3);font-weight:400}
+.bv{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--wh);padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:700;transition:all .3s;font-family:var(--fb)}
+.bv:hover{background:var(--gold);color:var(--dk);transform:scale(1.05)}
+/* STATS */
+.stats-s{background:linear-gradient(135deg,var(--dk),var(--navy2));position:relative;overflow:hidden}
+.stats-s::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 20% 50%,rgba(201,169,122,.07) 0%,transparent 70%)}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.si{text-align:center;padding:56px 20px;border-right:1px solid rgba(255,255,255,.06)}
+.si:last-child{border-right:none}
+.siicon{width:48px;height:48px;border-radius:14px;background:rgba(201,169,122,.12);border:1px solid rgba(201,169,122,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;margin:0 auto 14px}
+.sinum{font-family:var(--fs);font-size:2.9rem;color:var(--wh);font-weight:700;line-height:1;margin-bottom:5px}
+.sinum .sfx{color:var(--gold)}
+.silbl{color:rgba(255,255,255,.48);font-size:.82rem;letter-spacing:.4px}
+/* WHY */
+.why-s{background:var(--wh)}
+.why-g{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.why-vis{position:relative}
+.wmain{width:100%;height:520px;object-fit:cover;border-radius:var(--r2);box-shadow:0 28px 72px rgba(0,0,0,.14)}
+.wfloat{position:absolute;right:-26px;bottom:44px;background:var(--wh);border-radius:var(--r);padding:20px 24px;box-shadow:0 18px 46px rgba(0,0,0,.12);min-width:185px;border-left:4px solid var(--gold);animation:fy 4.5s ease-in-out infinite}
+@keyframes fy{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.wfloat strong{font-family:var(--fs);font-size:1.9rem;color:var(--navy);display:block;line-height:1}
+.wfloat span{font-size:.76rem;color:var(--tx3);margin-top:4px;display:block}
+.wbadge{position:absolute;top:-18px;left:-18px;background:var(--navy);border-radius:var(--r);padding:15px 20px;box-shadow:0 14px 36px rgba(0,0,0,.2);text-align:center}
+.wbadge strong{font-family:var(--fs);font-size:1.5rem;color:var(--gold);display:block}
+.wbadge span{font-size:.7rem;color:rgba(255,255,255,.62)}
+.wfeats{display:flex;flex-direction:column;gap:22px;margin-top:28px}
+.wf{display:flex;gap:14px;align-items:flex-start}
+.wfi{width:46px;height:46px;min-width:46px;border-radius:13px;background:var(--stone);border:1px solid var(--mist);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;transition:all .35s}
+.wf:hover .wfi{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+.wfh{font-size:.98rem;color:var(--navy);margin-bottom:4px}
+.wfp{font-size:.84rem;color:var(--tx3);line-height:1.65}
+/* TESTI */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tc{background:var(--cream);border-radius:var(--r2);padding:28px;border:1px solid var(--mist);transition:all .4s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.tc:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.09);background:var(--wh)}
+.tc:hover::before{transform:scaleX(1)}
+.qm{font-size:2.8rem;color:var(--gold);opacity:.18;font-family:var(--fs);margin-bottom:12px;line-height:1}
+.stars{display:flex;gap:3px;color:#F0A500;font-size:.82rem;margin-bottom:12px}
+.ttxt{font-size:.88rem;color:var(--tx2);line-height:1.82;font-style:italic;margin-bottom:20px}
+.tauth{display:flex;align-items:center;gap:11px}
+.tava{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--gold));display:flex;align-items:center;justify-content:center;color:var(--wh);font-family:var(--fs);font-weight:700;font-size:1rem;flex-shrink:0}
+.tnm{font-size:.9rem;font-weight:700;color:var(--navy);font-family:var(--fs)}
+.tdst{font-size:.74rem;color:var(--gold)}
+.tvrf{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;color:#059669;font-weight:700;margin-top:2px}
+/* CTA */
+.cta-s{position:relative;padding:110px 0;overflow:hidden}
+.cbg{position:absolute;inset:0}.cbg img{width:100%;height:100%;object-fit:cover}
+.cov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,15,.92),rgba(13,11,44,.82))}
+.cc{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto;padding:0 5%}
+.cc h2{font-size:clamp(2.2rem,4.5vw,3.5rem);color:var(--wh);margin-bottom:16px;line-height:1.15}
+.cc h2 em{font-style:italic;color:var(--gold)}
+.cc p{color:rgba(255,255,255,.74);font-size:1.02rem;max-width:500px;margin:0 auto 34px;line-height:1.78}
+.cbtns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+@media(max-width:1100px){.dg{grid-template-columns:1fr 1fr}.dc.tall{grid-row:auto}.pkg-g,.tg{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:repeat(2,1fr)}.si{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}.why-g{grid-template-columns:1fr}.why-vis{max-width:520px}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}section{padding:68px 0}.pkg-g,.tg{grid-template-columns:1fr}.dg{grid-template-columns:1fr}.hstats{display:none}.wfloat,.wbadge{display:none}.sc{flex-direction:column;padding:24px}.tinner{flex-wrap:wrap}.ti{flex-basis:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a><header>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Infinity Travels" width="44" height="44"/><div class="lw"><span class="lt">iNFiNiTY</span><span class="lb">Travels!</span></div></a>
+    <ul class="nav-links"><li><a href="index.html" class="active" aria-current="page">Home</a></li><li><a href="about.html">About</a></li><li><a href="packages.html">Packages</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="testimonials.html">Reviews</a></li><li><a href="contact.html" class="nc">Book Now</a></li></ul>
+    <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mob-nav" id="mobNav" aria-hidden="true">
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="packages.html">Packages</a>
+    <a href="services.html">Services</a><a href="blog.html">Blog</a><a href="testimonials.html">Reviews</a>
+    <a href="contact.html" class="mob-cta">Book a Holiday</a>
+  </nav>
+</header>
+<main id="main">
+<!-- HERO -->
+<section class="hero" aria-label="Infinity Travels">
+  <div class="hbg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&auto=format&fit=crop" alt="" loading="eager"/>
+    <div class="hov"></div>
+  </div>
+  <div class="hc">
+    <div class="heyebrow"><span class="heline"></span><span class="hetxt">Luxury Travel Atelier · Est. 2016</span><span class="heline"></span></div>
+    <h1>The Art of<br/><em>Extraordinary</em> Journeys</h1>
+    <p class="hdesc">Bespoke holiday experiences crafted for discerning travellers from Sri Lanka. Sixteen destinations, curated with passion, precision and an uncompromising eye for detail.</p>
+    <div class="hbtns">
+      <a href="packages.html" class="bg"><i class="fa-solid fa-globe"></i> Explore Packages</a>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--wh);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:600;border:1.5px solid rgba(255,255,255,.42);transition:all .35s;font-family:var(--fb)" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,.42)';this.style.color='var(--wh)'"><i class="fa-solid fa-paper-plane"></i> Plan My Journey</a>
+    </div>
+  </div>
+  <div class="hstats">
+    <div class="hst"><span class="hst-icon"><i class="fa-solid fa-users"></i></span><div><div class="hst-n">2,000+</div><div class="hst-l">Happy Travellers</div></div></div>
+    <div class="hst"><span class="hst-icon"><i class="fa-solid fa-location-dot"></i></span><div><div class="hst-n">16+</div><div class="hst-l">Destinations</div></div></div>
+    <div class="hst"><span class="hst-icon"><i class="fa-solid fa-star"></i></span><div><div class="hst-n">4.9 / 5</div><div class="hst-l">Client Rating</div></div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true"><div class="mt">
+  <div class="mi">Bali, Indonesia<span class="md"></span></div><div class="mi">Maldives<span class="md"></span></div><div class="mi">Thailand<span class="md"></span></div><div class="mi">Dubai & Abu Dhabi<span class="md"></span></div><div class="mi">Japan – Tokyo<span class="md"></span></div><div class="mi">France – Paris<span class="md"></span></div><div class="mi">Vietnam<span class="md"></span></div><div class="mi">Singapore<span class="md"></span></div><div class="mi">Turkey<span class="md"></span></div><div class="mi">England & Scotland<span class="md"></span></div><div class="mi">Russia<span class="md"></span></div><div class="mi">Cambodia<span class="md"></span></div>
+  <div class="mi">Bali, Indonesia<span class="md"></span></div><div class="mi">Maldives<span class="md"></span></div><div class="mi">Thailand<span class="md"></span></div><div class="mi">Dubai & Abu Dhabi<span class="md"></span></div><div class="mi">Japan – Tokyo<span class="md"></span></div><div class="mi">France – Paris<span class="md"></span></div><div class="mi">Vietnam<span class="md"></span></div><div class="mi">Singapore<span class="md"></span></div><div class="mi">Turkey<span class="md"></span></div><div class="mi">England & Scotland<span class="md"></span></div><div class="mi">Russia<span class="md"></span></div><div class="mi">Cambodia<span class="md"></span></div>
+</div></div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar"><div class="tinner">
+  <div class="ti"><div class="tiicon"><i class="fa-solid fa-tag"></i></div><div class="titxt"><strong>Best Price Guarantee</strong><span>Transparent, honest pricing</span></div></div>
+  <div class="ti"><div class="tiicon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div class="titxt"><strong>Fully Customisable</strong><span>Every detail tailored to you</span></div></div>
+  <div class="ti"><div class="tiicon"><i class="fa-solid fa-headset"></i></div><div class="titxt"><strong>24/7 Concierge</strong><span>Support at every destination</span></div></div>
+  <div class="ti"><div class="tiicon"><i class="fa-solid fa-shield-halved"></i></div><div class="titxt"><strong>8+ Years Trusted</strong><span>2,000+ journeys crafted</span></div></div>
+</div></div>
+
+<!-- SEARCH -->
+<section class="search-s"><div class="container">
+  <div class="sc rv">
+    <div class="sf"><label>Destination</label><select><option value="">All Destinations</option><option>Bali, Indonesia</option><option>Maldives</option><option>Thailand</option><option>Singapore</option><option>Vietnam</option><option>Cambodia</option><option>China</option><option>Japan</option><option>Dubai & Abu Dhabi</option><option>France</option><option>Turkey</option><option>England & Scotland</option><option>Russia</option></select></div>
+    <div class="sf"><label>Duration</label><select><option>Any Duration</option><option>3–5 Days</option><option>5–7 Days</option><option>7–10 Days</option><option>10+ Days</option></select></div>
+    <div class="sf"><label>Budget (LKR)</label><select><option>Any Budget</option><option>Under 200,000</option><option>200,000–400,000</option><option>400,000–700,000</option><option>700,000+</option></select></div>
+    <div class="sf"><label>Travel Date</label><input type="date"/></div>
+    <button class="sbtn" onclick="location.href='packages.html'"><i class="fa-solid fa-magnifying-glass"></i> Find Packages</button>
+  </div>
+</div></section>
+
+<!-- DESTINATIONS -->
+<section style="background:var(--wh)"><div class="container">
+  <div class="shc rv" style="margin-bottom:48px"><div class="eyebrow">Signature Destinations</div><h2 class="st">Where Will You <em style="font-style:italic;color:var(--gold)">Wander?</em></h2><div class="gr c"></div></div>
+  <div class="dg">
+    <div class="dc tall rv" onclick="location.href='package-details.html?pkg=bali'">
+      <img class="dimg" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80&auto=format&fit=crop" alt="Bali" loading="lazy" width="800" height="900"/>
+      <div class="dov"></div><div class="db"><span class="dcat">Island Escape</span><div class="dname">Bali, Indonesia</div><div class="ddur">5 Nights · From LKR 149,000</div><a href="package-details.html?pkg=bali" class="dcta">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+    <div class="dc rv" onclick="location.href='package-details.html?pkg=maldives'">
+      <img class="dimg" src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80&auto=format&fit=crop" alt="Maldives" loading="lazy" width="600" height="400"/>
+      <div class="dov"></div><div class="db"><span class="dcat">Tropical Paradise</span><div class="dname">Maldives</div><div class="ddur">3 Nights · From LKR 147,500</div><a href="package-details.html?pkg=maldives" class="dcta">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+    <div class="dc rv" onclick="location.href='package-details.html?pkg=dubai'">
+      <img class="dimg" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80&auto=format&fit=crop" alt="Dubai" loading="lazy" width="600" height="400"/>
+      <div class="dov"></div><div class="db"><span class="dcat">Middle East Luxury</span><div class="dname">Dubai & Abu Dhabi</div><div class="ddur">5 Nights · From LKR 489,000</div><a href="package-details.html?pkg=dubai" class="dcta">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+    <div class="dc rv" onclick="location.href='package-details.html?pkg=japan'">
+      <img class="dimg" src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=600&q=80&auto=format&fit=crop" alt="Japan" loading="lazy" width="600" height="400"/>
+      <div class="dov"></div><div class="db"><span class="dcat">Asia Wonder</span><div class="dname">Japan – Tokyo</div><div class="ddur">4 Nights · From LKR 549,000</div><a href="package-details.html?pkg=japan" class="dcta">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:44px" class="rv"><a href="packages.html" class="bo">View All 16 Destinations <i class="fa-solid fa-arrow-right"></i></a></div>
+</div></section>
+
+<!-- FEATURED PACKAGES -->
+<section class="pkg-s"><div class="container">
+  <div class="shc rv" style="margin-bottom:48px"><div class="eyebrow">Curated Packages</div><h2 class="st">Featured Tour Packages</h2><p class="sub">Handcrafted itineraries to the world's most breathtaking destinations — fully customisable to your every preference.</p><div class="gr c"></div></div>
+  <div class="pkg-g"><article class="pc rv" data-cat="asia">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="Thailand Getaway" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2">Top Pick</span>
+    <div class="pp2">From LKR 369,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">Thailand Getaway 🇹🇭</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>9 Nights / 10 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">Discover the very best of Thailand across three iconic destinations — the tropical islands of Phuket and Krabi, and the ...</p>
+    <div class="ptg"><span class="ptag">Return Flights fro</span><span class="ptag">9 Nights Hotels</span><span class="ptag">Daily Breakfast</span></div>
+    <div class="pf"><div class="ppr">LKR 369,000 <small>/person</small></div><a href="package-details.html?pkg=thailand" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article><article class="pc rv" data-cat="europe">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="Explore France" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2" style="background:#1d4ed8">Europe</span>
+    <div class="pp2">From LKR 695,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">Explore France 🇫🇷</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>6 Nights / 7 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">Embrace the romance, elegance and grandeur of France. Stand beneath the glittering Eiffel Tower, wander the world's grea...</p>
+    <div class="ptg"><span class="ptag">Return Internation</span><span class="ptag">6 Nights 4★ Paris </span><span class="ptag">Daily Breakfast</span></div>
+    <div class="pf"><div class="ppr">LKR 695,000 <small>/person</small></div><a href="package-details.html?pkg=france" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article><article class="pc rv" data-cat="asia">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1557270492-6d3e59e12ce3?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="Vietnam Adventure" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2" style="background:#059669">Adventure</span>
+    <div class="pp2">From LKR 458,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">Vietnam Adventure 🇻🇳</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>8 Nights / 9 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">Experience the breathtaking diversity of Vietnam from south to north. Begin in the electric streets of Ho Chi Minh City,...</p>
+    <div class="ptg"><span class="ptag">Return Internation</span><span class="ptag">2 Domestic Flights</span><span class="ptag">8 Nights Premium H</span></div>
+    <div class="pf"><div class="ppr">LKR 458,000 <small>/person</small></div><a href="package-details.html?pkg=vietnam" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article><article class="pc rv" data-cat="middle-east">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="Dubai & Abu Dhabi" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2" style="background:#7c3aed">Premium</span>
+    <div class="pp2">From LKR 489,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">Dubai & Abu Dhabi 🇦🇪</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>5 Nights / 6 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">Experience the ultimate in modern luxury, architectural marvels and ancient desert culture across the UAE's two most spe...</p>
+    <div class="ptg"><span class="ptag">Return Internation</span><span class="ptag">2N Abu Dhabi 4★ + </span><span class="ptag">Daily Breakfast</span></div>
+    <div class="pf"><div class="ppr">LKR 489,000 <small>/person</small></div><a href="package-details.html?pkg=dubai" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article><article class="pc rv" data-cat="asia">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="Japan – Tokyo Getaway" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2" style="background:#dc2626">Japan</span>
+    <div class="pp2">From LKR 549,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">Japan – Tokyo Getaway 🇯🇵</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>4 Nights / 5 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">Experience Japan's extraordinary blend of timeless tradition and breathtaking modernity. Marvel at the iconic snow-cappe...</p>
+    <div class="ptg"><span class="ptag">Return Internation</span><span class="ptag">4 Nights Hotel in </span><span class="ptag">Daily Breakfast</span></div>
+    <div class="pf"><div class="ppr">LKR 549,000 <small>/person</small></div><a href="package-details.html?pkg=japan" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article><article class="pc rv" data-cat="europe">
+  <div class="pi"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80&auto=format&fit=crop&auto=format&fit=crop" alt="England & Scotland" loading="lazy" width="600" height="400"/>
+    <div class="poi"></div><span class="pb2" style="background:#0369a1">Ultimate</span>
+    <div class="pp2">From LKR 1,109,000</div>
+  </div>
+  <div class="pb">
+    <div class="pn">England & Scotland 🇬🇧</div>
+    <div class="pm"><span><i class="fa-regular fa-calendar"></i>7 Nights / 8 Days</span><span><i class="fa-solid fa-person"></i>Per Person</span></div>
+    <p class="pd">The ultimate British Isles experience spanning England and Scotland. From world-famous London landmarks to dramatic High...</p>
+    <div class="ptg"><span class="ptag">Return Internation</span><span class="ptag">4N London 4★ + 3N </span><span class="ptag">Daily Breakfast</span></div>
+    <div class="pf"><div class="ppr">LKR 1,109,000 <small>/person</small></div><a href="package-details.html?pkg=uk" class="bv">View Details <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</article>
+  </div>
+  <div style="text-align:center;margin-top:44px" class="rv"><a href="packages.html" class="bo">View All 16 Packages <i class="fa-solid fa-arrow-right"></i></a></div>
+</div></section>
+
+<!-- STATS -->
+<section class="stats-s"><div class="container"><div class="sg">
+  <div class="si rv"><div class="siicon"><i class="fa-solid fa-users"></i></div><div class="sinum"><span class="cnt" data-t="2000">0</span><span class="sfx">+</span></div><div class="silbl">Happy Travellers</div></div>
+  <div class="si rv"><div class="siicon"><i class="fa-solid fa-location-dot"></i></div><div class="sinum"><span class="cnt" data-t="16">0</span><span class="sfx">+</span></div><div class="silbl">Destinations</div></div>
+  <div class="si rv"><div class="siicon"><i class="fa-solid fa-calendar-check"></i></div><div class="sinum"><span class="cnt" data-t="8">0</span><span class="sfx">+</span></div><div class="silbl">Years Experience</div></div>
+  <div class="si rv"><div class="siicon"><i class="fa-solid fa-star"></i></div><div class="sinum"><span class="cnt" data-t="98">0</span><span class="sfx">%</span></div><div class="silbl">Satisfaction Rate</div></div>
+</div></div></section>
+
+<!-- WHY US -->
+<section class="why-s"><div class="container"><div class="why-g">
+  <div class="why-vis rvl">
+    <img class="wmain" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&auto=format&fit=crop" alt="Travel experience" loading="lazy" width="800" height="600"/>
+    <div class="wbadge"><strong>8+</strong><span>Years of Excellence</span></div>
+    <div class="wfloat"><strong>98%</strong><span>Satisfaction Rate<br/>Verified Reviews</span></div>
+  </div>
+  <div class="rvr">
+    <div class="eyebrow">Why Infinity Travels</div>
+    <h2 class="st">Your Journey,<br/>Our <em style="font-style:italic;color:var(--gold)">Passion</em></h2>
+    <p style="color:var(--tx3);line-height:1.82;margin-bottom:6px;font-size:.96rem">We don't simply book trips — we architect memories that remain with you for a lifetime. Every itinerary is a love letter to the art of travel.</p>
+    <div class="gr" style="margin-left:0;margin-bottom:28px"></div>
+    
+    <div style="margin-top:30px" class="rv"><a href="about.html" class="bo">Our Story <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</div></div></section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--cream)"><div class="container">
+  <div class="shc rv" style="margin-bottom:46px"><div class="eyebrow">Traveller Reviews</div><h2 class="st">What Our Guests Say</h2><p class="sub">Genuine reviews from verified clients who chose Infinity Travels.</p><div class="gr c"></div></div>
+  <div class="tg">
+    <div class="tc rv"><div class="qm">"</div><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="ttxt">"Our Bali trip was absolutely magical. Every detail was arranged with such care — from Nusa Penida to the rice terraces in Ubud, Infinity Travels delivered far beyond our expectations."</p><div class="tauth"><div class="tava">P</div><div><div class="tnm">Priya Wickramasinghe</div><div class="tdst"><i class="fa-solid fa-plane-up"></i> Bali, Indonesia</div><div class="tvrf"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div></div>
+    <div class="tc rv"><div class="qm">"</div><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="ttxt">"Thailand was an incredible family adventure! Safari World, Phi Phi Islands and the Bangkok dinner cruise were the highlights of our lives. The whole package was absolutely flawless."</p><div class="tauth"><div class="tava">K</div><div><div class="tnm">Kasun Jayasinghe</div><div class="tdst"><i class="fa-solid fa-plane-up"></i> Thailand Getaway</div><div class="tvrf"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div></div>
+    <div class="tc rv"><div class="qm">"</div><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="ttxt">"Our Maldives honeymoon was worth every rupee. Snorkelling, night fishing and the resort views were breathtaking. Infinity Travels made our special trip truly unforgettable!"</p><div class="tauth"><div class="tava">A</div><div><div class="tnm">Amara & Ravin</div><div class="tdst"><i class="fa-solid fa-plane-up"></i> Maldives Getaway</div><div class="tvrf"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:42px" class="rv"><a href="testimonials.html" class="bo">Read All Reviews <i class="fa-solid fa-arrow-right"></i></a></div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta-s">
+  <div class="cbg"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80&auto=format&fit=crop" alt=""/><div class="cov"></div></div>
+  <div class="cc rv">
+    <div class="eyebrow" style="justify-content:center">Begin Your Story</div>
+    <h2>Ready for Your <em>Extraordinary</em> Journey?</h2>
+    <p>Contact our travel atelier today and let our experts craft the perfect holiday tailored entirely to you.</p>
+    <div class="cbtns">
+      <a href="contact.html" class="bg"><i class="fa-solid fa-paper-plane"></i> Get a Free Quote</a>
+      <a href="https://wa.me/94777292589?text=Hello!%20I'd%20like%20to%20plan%20a%20holiday%20with%20Infinity%20Travels." target="_blank" rel="noopener noreferrer" class="bwa"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main><footer>
+  <div class="container">
+    <div class="ft">
+      <div class="fb">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="" width="42" height="42"/><div class="lw"><span class="lt" style="color:var(--gold)">iNFiNiTY</span><span class="lb" style="color:#fff">Travels!</span></div></a>
+        <p>Your trusted travel partner from Sri Lanka to the world — crafting extraordinary journeys since 2016.</p>
+        <div class="fs">
+          <a href="#" class="fi"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="fc"><h5>Navigate</h5><ul>
+        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i>About Us</a></li>
+        <li><a href="packages.html"><i class="fa-solid fa-chevron-right"></i>Packages</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i>Services</a></li>
+        <li><a href="testimonials.html"><i class="fa-solid fa-chevron-right"></i>Reviews</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i>Contact</a></li>
+      </ul></div>
+      <div class="fc"><h5>Destinations</h5><ul>
+        <li><a href="package-details.html?pkg=bali"><i class="fa-solid fa-chevron-right"></i>Bali, Indonesia</a></li>
+        <li><a href="package-details.html?pkg=maldives"><i class="fa-solid fa-chevron-right"></i>Maldives</a></li>
+        <li><a href="package-details.html?pkg=thailand"><i class="fa-solid fa-chevron-right"></i>Thailand</a></li>
+        <li><a href="package-details.html?pkg=dubai"><i class="fa-solid fa-chevron-right"></i>Dubai & Abu Dhabi</a></li>
+        <li><a href="package-details.html?pkg=japan"><i class="fa-solid fa-chevron-right"></i>Japan</a></li>
+        <li><a href="packages.html"><i class="fa-solid fa-chevron-right"></i>View All 16 →</a></li>
+      </ul></div>
+      <div class="fc"><h5>Contact Us</h5>
+        <address style="font-style:normal">
+          <div class="fci"><i class="fa-solid fa-phone"></i><a href="tel:+94777292589" style="color:inherit">+94 77 729 2589</a></div>
+          <div class="fci"><i class="fa-solid fa-envelope"></i><a href="mailto:info@infinitytravels.lk" style="color:inherit">info@infinitytravels.lk</a></div>
+          <div class="fci"><i class="fa-solid fa-location-dot"></i>Colombo, Sri Lanka</div>
+          <div class="fci"><i class="fa-regular fa-clock"></i>Mon–Sat: 9:00 AM – 6:00 PM</div>
+        </address>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>© 2025 Infinity Travels. All Rights Reserved.</p>
+      <div class="flinks"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+<div class="wf">
+  <a href="https://wa.me/94777292589?text=Hello!%20I'd%20like%20to%20enquire%20about%20a%20holiday." target="_blank" rel="noopener noreferrer" class="wfb" aria-label="WhatsApp Infinity Travels">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div><script>
+'use strict';
+const ham=document.getElementById('ham'),mn=document.getElementById('mobNav');
+ham.addEventListener('click',function(){var o=mn.classList.toggle('open');ham.setAttribute('aria-expanded',o);mn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';});
+mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');ham.setAttribute('aria-expanded','false');mn.setAttribute('aria-hidden','true');document.body.style.overflow='';});});
+var els=document.querySelectorAll('.rv,.rvl,.rvr');
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('on');},i*60);obs.unobserve(e.target);}});},{threshold:.1});
+els.forEach(function(el){obs.observe(el);});
+// Counter
+function animCount(el){
+  var t=+el.dataset.t,dur=2200,s=performance.now();
+  function tick(n){var p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,4);el.textContent=Math.floor(e*t).toLocaleString();if(p<1)requestAnimationFrame(tick);}
+  requestAnimationFrame(tick);
+}
+var ss=document.querySelector('.stats-s');
+if(ss){var so=new IntersectionObserver(function(e){if(e[0].isIntersecting){document.querySelectorAll('.cnt').forEach(animCount);so.disconnect();}},{threshold:.3});so.observe(ss);}
+// Parallax
+window.addEventListener('scroll',function(){var img=document.querySelector('.hbg img');if(img&&window.scrollY<window.innerHeight)img.style.transform='scale(1.05) translateY('+window.scrollY*.22+'px)';},{passive:true});
+</script></body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Read 2000+ verified traveller reviews for Infinity Travels. 4.9 out of 5 stars. Bali, Maldives, Thailand, Dubai, Japan and more."/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+<title>Traveller Reviews | Infinity Travels</title>
+<style>
+:root{
+--dk:#061A3A;--navy:#082B5C;--navy2:#0B4F8A;
+--gold:#2FA8FF;--gold-lt:#D9EEFF;--gold-dk:#1672B8;
+--cyan:#00AEEF;--wh:#FFFFFF;--cream:#FAF8F4;
+--stone:#F2F0EB;--mist:#E8E6E0;
+--tx:#1A1A2E;--tx2:#4A4863;--tx3:#7A7898;
+--r:18px;--r2:28px;
+--fs:'Times New Roman',Times,serif;
+--fb:Calibri,'Trebuchet MS',Arial,sans-serif;
+--ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--tx);background:var(--wh);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:var(--fs)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.skip{position:absolute;top:-100%;left:0;background:var(--cyan);color:#fff;padding:12px 20px;z-index:9999;font-weight:700;border-radius:0 0 8px 0}.skip:focus{top:0}
+.container{max-width:1280px;margin:0 auto;padding:0 5%}
+section{padding:90px 0}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0 5%;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,248,244,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 32px rgba(0,0,0,.07);transition:height .3s}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{width:44px;height:44px;border-radius:50%;object-fit:contain;border:2px solid rgba(201,169,122,.4)}
+.lw{display:flex;flex-direction:column;line-height:1}
+.lw .lt{font-family:var(--fb);font-size:.58rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:var(--gold);display:block}
+.lw .lb{font-family:var(--fs);font-size:1.2rem;font-weight:700;color:var(--navy)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:.85rem;font-weight:600;padding:7px 13px;border-radius:6px;color:var(--tx2);position:relative;transition:all .3s}
+.nav-links a:not(.nc)::after{content:'';position:absolute;bottom:2px;left:13px;right:13px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a:not(.nc):hover,.nav-links a.active:not(.nc){color:var(--gold)}
+.nav-links a:not(.nc):hover::after,.nav-links a.active:not(.nc)::after{transform:scaleX(1)}
+.nc{background:var(--gold)!important;color:var(--dk)!important;padding:8px 20px!important;border-radius:50px!important;font-weight:700!important;box-shadow:0 4px 18px rgba(201,169,122,.3)!important;transition:all .3s!important}
+.nc:hover{background:var(--gold-dk)!important;transform:translateY(-2px)!important}
+.nc::after{display:none!important}
+.ham{display:none;flex-direction:column;gap:5px;padding:8px}
+.ham span{display:block;width:22px;height:1.5px;background:var(--navy);border-radius:2px;transition:all .3s}
+.ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham[aria-expanded=true] span:nth-child(2){opacity:0}
+.ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:0;top:72px;z-index:999;background:rgba(250,248,244,.99);backdrop-filter:blur(20px);padding:32px 5%;transform:translateY(-110%);opacity:0;transition:all .4s;pointer-events:none}
+.mob-nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mob-nav a{display:block;font-size:1rem;font-weight:600;color:var(--tx);padding:15px 0;border-bottom:1px solid var(--mist);transition:color .3s}
+.mob-nav a:hover{color:var(--gold)}
+.mob-cta{margin-top:20px!important;background:var(--gold)!important;color:var(--dk)!important;border-radius:50px;text-align:center;padding:14px!important;font-weight:700!important}
+
+/* PAGE HERO */
+.ph{min-height:52vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:104px 5% 60px;margin-top:72px;overflow:hidden}
+.ph-bg{position:absolute;inset:0}.ph-bg img{width:100%;height:100%;object-fit:cover}
+.ph-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,15,.88),rgba(13,11,44,.76))}
+.ph-c{position:relative;z-index:2}
+.bc{font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.bc a{color:var(--gold)}.bc i{font-size:.55rem;color:rgba(255,255,255,.35)}
+.ph h1{font-size:clamp(2.4rem,5.5vw,4rem);color:var(--wh);margin-bottom:12px;letter-spacing:-.2px}
+.ph h1 em{font-style:italic;color:var(--gold)}
+.ph p{color:rgba(255,255,255,.78);font-size:1rem;max-width:550px;margin:0 auto}
+
+/* SECTION HELPERS */
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:22px;height:1px;background:var(--gold)}
+.st{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--navy);margin-bottom:14px;line-height:1.15}
+.sub{font-size:.98rem;color:var(--tx3);line-height:1.8;max-width:550px}
+.shc{text-align:center}.shc .sub{margin:0 auto}
+.gr{width:56px;height:2px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));border-radius:2px;margin-top:16px}
+.gr.c{margin:16px auto 0}
+
+/* BUTTONS */
+.bg{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dk);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb);box-shadow:0 5px 20px rgba(201,169,122,.35)}
+.bg:hover{background:var(--gold-dk);transform:translateY(-3px);color:var(--wh);box-shadow:0 10px 28px rgba(201,169,122,.45)}
+.bn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--wh);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bn:hover{background:var(--gold);color:var(--dk);transform:translateY(-3px)}
+.bo{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--navy);padding:12px 32px;border-radius:50px;font-size:.88rem;font-weight:700;border:2px solid var(--navy);transition:all .35s;font-family:var(--fb)}
+.bo:hover{background:var(--navy);color:var(--wh)}
+.bw{display:inline-flex;align-items:center;gap:8px;background:var(--wh);color:var(--navy);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bw:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.bwa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:var(--wh);padding:13px 32px;border-radius:50px;font-size:.9rem;font-weight:700;transition:all .35s;font-family:var(--fb)}
+.bwa:hover{background:#1ebe5c;transform:translateY(-3px);color:var(--wh)}
+
+/* FORMS */
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.fg label{font-size:.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px}
+.fg input,.fg select{border:none;border-bottom:2px solid var(--mist);padding:9px 0;font-family:var(--fb);font-size:.9rem;color:var(--tx);outline:none;background:transparent;transition:border .3s;width:100%}
+.fg input:focus,.fg select:focus{border-bottom-color:var(--gold)}
+.fg textarea{width:100%;border:2px solid var(--mist);border-radius:var(--r);padding:11px 13px;font-family:var(--fb);font-size:.9rem;color:var(--tx);outline:none;transition:border .3s;resize:vertical;height:115px;background:transparent}
+.fg textarea:focus{border-color:var(--gold)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* FOOTER */
+footer{background:var(--dk);color:rgba(255,255,255,.62);padding:72px 0 0}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.fb p{font-size:.85rem;line-height:1.78;margin-top:14px;max-width:270px}
+.fs{display:flex;gap:10px;margin-top:20px}
+.fi{width:36px;height:36px;border-radius:9px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:all .3s}
+.fi:hover{background:var(--gold);border-color:var(--gold);color:var(--dk)}
+.fc h5{font-family:var(--fs);color:var(--wh);font-size:.98rem;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid rgba(201,169,122,.2);display:inline-block}
+.fc ul{display:flex;flex-direction:column;gap:9px}
+.fc ul a{font-size:.82rem;transition:all .3s;display:flex;align-items:center;gap:6px}
+.fc ul a i{font-size:.58rem;color:var(--gold)}
+.fc ul a:hover{color:var(--gold);padding-left:4px}
+.fci{display:flex;gap:9px;align-items:flex-start;margin-bottom:11px;font-size:.82rem}
+.fci i{color:var(--gold);margin-top:2px;min-width:13px}
+.fbot{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{font-size:.77rem}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:.77rem;transition:color .3s}
+.flinks a:hover{color:var(--gold)}
+
+/* WHATSAPP */
+.wf{position:fixed;bottom:26px;right:26px;z-index:9998}
+.wfb{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:var(--wh);font-size:1.55rem;box-shadow:0 6px 24px rgba(37,211,102,.5);text-decoration:none;animation:wap 3s infinite;transition:transform .3s}
+.wfb:hover{transform:scale(1.1);color:var(--wh)}
+@keyframes wap{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.5)}50%{box-shadow:0 6px 24px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,.1)}}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rvl{opacity:0;transform:translateX(-30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rvl.on{opacity:1;transform:none}
+.rvr{opacity:0;transform:translateX(30px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rvr.on{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:880px){.ft{grid-template-columns:1fr 1fr}.fr{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}section{padding:68px 0}.ft{grid-template-columns:1fr}}
+
+.rating-bar{background:var(--navy);padding:46px 0}
+.rw{max-width:880px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center}
+.bignum{font-family:var(--fs);font-size:5.5rem;color:var(--gold);line-height:1;font-weight:700}
+.bigstars{display:flex;gap:4px;justify-content:center;color:#F0A500;font-size:1.2rem;margin:7px 0}
+.biglbl{color:rgba(255,255,255,.52);font-size:.82rem}
+.baritem{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.barlbl{color:rgba(255,255,255,.68);font-size:.82rem;min-width:26px;text-align:right}
+.bartrack{flex:1;height:7px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.barfill{height:100%;background:linear-gradient(90deg,var(--gold-dk),var(--gold));border-radius:3px}
+.barpct{color:rgba(255,255,255,.42);font-size:.78rem;min-width:28px}
+.tm-main{background:var(--cream)}
+.tmasonry{columns:3;column-gap:20px;max-width:1280px;margin:0 auto}
+.tcard{break-inside:avoid;background:var(--wh);border-radius:var(--r2);padding:28px;border:1px solid var(--mist);margin-bottom:20px;box-shadow:0 3px 14px rgba(0,0,0,.05);transition:all .4s;position:relative;overflow:hidden}
+.tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.1)}
+.tcard:hover::before{transform:scaleX(1)}
+.qmark{font-size:2.8rem;color:var(--gold);opacity:.17;font-family:var(--fs);margin-bottom:11px;line-height:1}
+.stars2{display:flex;gap:3px;color:#F0A500;font-size:.82rem;margin-bottom:12px}
+.ttext{font-size:.88rem;color:var(--tx2);line-height:1.82;font-style:italic;margin-bottom:20px}
+.tauth2{display:flex;align-items:center;gap:11px}
+.tava2{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--gold));display:flex;align-items:center;justify-content:center;color:var(--wh);font-family:var(--fs);font-weight:700;font-size:1rem;flex-shrink:0}
+.tnm2{font-size:.9rem;font-weight:700;color:var(--navy);font-family:var(--fs)}
+.tdst2{font-size:.74rem;color:var(--gold)}.tdt{font-size:.72rem;color:var(--tx3)}
+.tvrf2{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;color:#059669;font-weight:700;margin-top:2px}
+.rev-s{background:var(--wh)}
+.rev-form{max-width:660px;margin:0 auto;background:var(--wh);border-radius:var(--r2);box-shadow:0 22px 60px rgba(0,0,0,.1);padding:38px;border-top:4px solid var(--gold)}
+.rev-form h3{font-size:1.45rem;color:var(--navy);margin-bottom:5px}
+.rev-form>p{color:var(--tx3);font-size:.88rem;margin-bottom:22px}
+.star-rat{display:flex;flex-direction:row-reverse;gap:5px;margin-bottom:20px;justify-content:flex-start;transform:rotateY(180deg)}
+.star-rat input{display:none}
+.star-rat label{font-size:2.1rem;color:var(--mist);cursor:pointer;transition:color .3s}
+.star-rat label:hover,.star-rat label:hover~label,.star-rat input:checked~label{color:#F0A500}
+.sbtn3{background:var(--navy);color:var(--wh);border:none;border-radius:50px;padding:13px;width:100%;font-size:.9rem;font-weight:700;font-family:var(--fb);cursor:pointer;transition:all .35s;display:flex;align-items:center;justify-content:center;gap:7px}
+.sbtn3:hover{background:var(--gold);color:var(--dk);transform:translateY(-2px)}
+.ok3{display:none;background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;border-radius:var(--r);padding:12px 16px;margin-top:12px;font-size:.88rem}
+.ok3.show{display:block}
+@media(max-width:1100px){.tmasonry{columns:2}.rw{grid-template-columns:1fr}}
+@media(max-width:768px){.tmasonry{columns:1}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a><header>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Infinity Travels" width="44" height="44"/><div class="lw"><span class="lt">iNFiNiTY</span><span class="lb">Travels!</span></div></a>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="packages.html">Packages</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="testimonials.html" class="active" aria-current="page">Reviews</a></li><li><a href="contact.html" class="nc">Book Now</a></li></ul>
+    <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav"><span></span><span></span><span></span></button>
+  </nav>
+  <nav class="mob-nav" id="mobNav" aria-hidden="true">
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="packages.html">Packages</a>
+    <a href="services.html">Services</a><a href="blog.html">Blog</a><a href="testimonials.html">Reviews</a>
+    <a href="contact.html" class="mob-cta">Book a Holiday</a>
+  </nav>
+</header><main id="main">
+<section class="ph"><div class="ph-bg"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80&auto=format&fit=crop" alt="" loading="eager"/><div class="ph-ov"></div></div>
+<div class="ph-c"><div class="bc"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Reviews</span></div><h1>Traveller <em>Stories</em></h1><p>Over 2,000 satisfied travellers have explored the world with Infinity Travels.</p></div></section>
+
+<div class="rating-bar"><div class="container"><div class="rw rv">
+  <div style="text-align:center"><div class="bignum">4.9</div><div class="bigstars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div><div class="biglbl">Based on 2,000+ reviews</div></div>
+  <div>
+    <div class="baritem"><span class="barlbl">5★</span><div class="bartrack"><div class="barfill" style="width:88%"></div></div><span class="barpct">88%</span></div>
+    <div class="baritem"><span class="barlbl">4★</span><div class="bartrack"><div class="barfill" style="width:9%"></div></div><span class="barpct">9%</span></div>
+    <div class="baritem"><span class="barlbl">3★</span><div class="bartrack"><div class="barfill" style="width:2%"></div></div><span class="barpct">2%</span></div>
+    <div class="baritem"><span class="barlbl">2★</span><div class="bartrack"><div class="barfill" style="width:1%"></div></div><span class="barpct">1%</span></div>
+    <div class="baritem"><span class="barlbl">1★</span><div class="bartrack"><div class="barfill" style="width:.5%"></div></div><span class="barpct">0%</span></div>
+  </div>
+</div></div></div>
+
+<section class="tm-main"><div class="container">
+  <div class="shc rv" style="margin-bottom:48px"><div class="eyebrow">Verified Reviews</div><h2 class="st">What Our Travellers Say</h2><div class="gr c"></div></div>
+  <div class="tmasonry"><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Our Bali trip was absolutely magical. Every detail was arranged with such care — from Nusa Penida to the rice terraces in Ubud, Infinity Travels delivered far beyond our expectations. We will definitely book again!"</p>
+  <div class="tauth2"><div class="tava2">P</div><div><div class="tnm2">Priya Wickramasinghe</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Bali, Indonesia</div><div class="tdt">August 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Thailand was an incredible family adventure! Safari World, Phi Phi Islands and the Bangkok dinner cruise were the highlights of our lives. The whole package was absolutely flawless."</p>
+  <div class="tauth2"><div class="tava2">K</div><div><div class="tnm2">Kasun Jayasinghe</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Thailand Getaway</div><div class="tdt">July 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Our Maldives honeymoon was worth every rupee. Snorkelling, night fishing and the resort views were breathtaking. Infinity Travels made our special trip truly unforgettable!"</p>
+  <div class="tauth2"><div class="tava2">A</div><div><div class="tnm2">Amara & Ravin</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Maldives Getaway</div><div class="tdt">September 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Vietnam in 9 days was phenomenal. Ho Chi Minh, Da Nang and the Ninh Binh overnight cruise were the highlights of my entire travel life. The team was incredibly helpful throughout."</p>
+  <div class="tauth2"><div class="tava2">D</div><div><div class="tnm2">Dulani Rathnayake</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Vietnam Adventure</div><div class="tdt">June 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Dubai was spectacular! The Desert Safari, Burj Khalifa and the Marina Dhow Cruise were all world-class. Excellent value for money and completely seamless arrangements throughout."</p>
+  <div class="tauth2"><div class="tava2">S</div><div><div class="tnm2">Sampath Fernando</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Dubai & Abu Dhabi</div><div class="tdt">May 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Japan was my dream trip and Infinity Travels made it absolutely perfect. Mt. Fuji, Disneyland Tokyo and the Senso-ji Temple were all magical. Every single day was beautifully planned!"</p>
+  <div class="tauth2"><div class="tava2">N</div><div><div class="tnm2">Nishani Perera</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Japan – Tokyo</div><div class="tdt">April 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Paris in June with Infinity Travels was breathtaking. Eiffel Tower at sunset, Loire Valley wine tasting and Disneyland with the children — perfect planning, nothing was too much trouble!"</p>
+  <div class="tauth2"><div class="tava2">C</div><div><div class="tnm2">Chathuri & Family</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Explore France</div><div class="tdt">June 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Turkey was beyond incredible! Istanbul's rich history, the Bosphorus Dinner Cruise and Cappadocia's underground city are experiences I will cherish forever. The guide was exceptional!"</p>
+  <div class="tauth2"><div class="tava2">M</div><div><div class="tnm2">Mahendra Rupasinghe</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Turkey Explorer</div><div class="tdt">October 2024</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div><div class="tcard rv">
+  <div class="qmark">"</div>
+  <div class="stars2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <p class="ttext">"Singapore & Malaysia in 6 days was perfectly organised. Sunway Lagoon, Genting Highlands and Melaka heritage streets — we packed so much in. The team was always available when needed."</p>
+  <div class="tauth2"><div class="tava2">R</div><div><div class="tnm2">Roshan & Geetha</div><div class="tdst2"><i class="fa-solid fa-plane-up"></i> Singapore & Malaysia</div><div class="tdt">March 2025</div><div class="tvrf2"><i class="fa-solid fa-circle-check"></i> Verified Traveller</div></div></div>
+</div></div>
+</div></section>
+
+<section class="rev-s"><div class="container">
+  <div class="shc rv" style="margin-bottom:36px"><div class="eyebrow">Share Your Experience</div><h2 class="st">Write a Review</h2><div class="gr c"></div></div>
+  <div class="rev-form rv">
+    <h3>Your Travel Review</h3>
+    <p>Your genuine feedback helps other travellers make the right choice.</p>
+    <form onsubmit="handleRev(event)" novalidate>
+      <div style="margin-bottom:18px"><label style="font-size:.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:8px">Your Rating *</label>
+      <div class="star-rat"><input type="radio" id="s5" name="r" value="5"/><label for="s5"><i class="fa-solid fa-star"></i></label><input type="radio" id="s4" name="r" value="4"/><label for="s4"><i class="fa-solid fa-star"></i></label><input type="radio" id="s3" name="r" value="3"/><label for="s3"><i class="fa-solid fa-star"></i></label><input type="radio" id="s2" name="r" value="2"/><label for="s2"><i class="fa-solid fa-star"></i></label><input type="radio" id="s1" name="r" value="1"/><label for="s1"><i class="fa-solid fa-star"></i></label></div></div>
+      <div class="fr"><div class="fg"><label>Full Name *</label><input type="text" placeholder="Your Name" required/></div><div class="fg"><label>Destination</label><select><option>Bali</option><option>Maldives</option><option>Thailand</option><option>Vietnam</option><option>Singapore</option><option>Dubai & Abu Dhabi</option><option>Japan</option><option>France</option><option>Turkey</option><option>Other</option></select></div></div>
+      <div class="fg"><label>Your Review *</label><textarea placeholder="Tell us about your experience with Infinity Travels..." required></textarea></div>
+      <button type="submit" class="sbtn3"><i class="fa-solid fa-star"></i> Submit Review</button>
+      <div class="ok3" id="revOk"><i class="fa-solid fa-circle-check"></i> Thank you for your review! It will be published after verification.</div>
+    </form>
+  </div>
+</div></section>
+
+<section style="background:linear-gradient(135deg,var(--dk),var(--navy));padding:72px 0;text-align:center"><div class="container">
+  <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--wh);margin-bottom:12px">Join Our Happy <span style="font-style:italic;color:var(--gold)">Travellers!</span></h2>
+  <p style="color:rgba(255,255,255,.68);max-width:470px;margin:0 auto 26px;font-size:.96rem;line-height:1.78">Be part of the Infinity Travels family. Start planning your dream holiday today.</p>
+  <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap"><a href="packages.html" class="bg"><i class="fa-solid fa-globe"></i> Explore Packages</a><a href="contact.html" class="bw"><i class="fa-solid fa-paper-plane"></i> Get a Free Quote</a></div>
+</div></section>
+</main><footer>
+  <div class="container">
+    <div class="ft">
+      <div class="fb">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="" width="42" height="42"/><div class="lw"><span class="lt" style="color:var(--gold)">iNFiNiTY</span><span class="lb" style="color:#fff">Travels!</span></div></a>
+        <p>Your trusted travel partner from Sri Lanka to the world — crafting extraordinary journeys since 2016.</p>
+        <div class="fs">
+          <a href="#" class="fi"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="fi"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="fc"><h5>Navigate</h5><ul>
+        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i>About Us</a></li>
+        <li><a href="packages.html"><i class="fa-solid fa-chevron-right"></i>Packages</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i>Services</a></li>
+        <li><a href="testimonials.html"><i class="fa-solid fa-chevron-right"></i>Reviews</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i>Contact</a></li>
+      </ul></div>
+      <div class="fc"><h5>Destinations</h5><ul>
+        <li><a href="package-details.html?pkg=bali"><i class="fa-solid fa-chevron-right"></i>Bali, Indonesia</a></li>
+        <li><a href="package-details.html?pkg=maldives"><i class="fa-solid fa-chevron-right"></i>Maldives</a></li>
+        <li><a href="package-details.html?pkg=thailand"><i class="fa-solid fa-chevron-right"></i>Thailand</a></li>
+        <li><a href="package-details.html?pkg=dubai"><i class="fa-solid fa-chevron-right"></i>Dubai & Abu Dhabi</a></li>
+        <li><a href="package-details.html?pkg=japan"><i class="fa-solid fa-chevron-right"></i>Japan</a></li>
+        <li><a href="packages.html"><i class="fa-solid fa-chevron-right"></i>View All 16 →</a></li>
+      </ul></div>
+      <div class="fc"><h5>Contact Us</h5>
+        <address style="font-style:normal">
+          <div class="fci"><i class="fa-solid fa-phone"></i><a href="tel:+94777292589" style="color:inherit">+94 77 729 2589</a></div>
+          <div class="fci"><i class="fa-solid fa-envelope"></i><a href="mailto:info@infinitytravels.lk" style="color:inherit">info@infinitytravels.lk</a></div>
+          <div class="fci"><i class="fa-solid fa-location-dot"></i>Colombo, Sri Lanka</div>
+          <div class="fci"><i class="fa-regular fa-clock"></i>Mon–Sat: 9:00 AM – 6:00 PM</div>
+        </address>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>© 2025 Infinity Travels. All Rights Reserved.</p>
+      <div class="flinks"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+<div class="wf">
+  <a href="https://wa.me/94777292589?text=Hello!%20I'd%20like%20to%20enquire%20about%20a%20holiday." target="_blank" rel="noopener noreferrer" class="wfb" aria-label="WhatsApp Infinity Travels">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div><script>
+'use strict';
+var ham=document.getElementById('ham'),mn=document.getElementById('mobNav');
+ham.addEventListener('click',function(){var o=mn.classList.toggle('open');ham.setAttribute('aria-expanded',o);mn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';});
+mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');ham.setAttribute('aria-expanded','false');mn.setAttribute('aria-hidden','true');document.body.style.overflow='';});});
+var els=document.querySelectorAll('.rv,.rvl,.rvr');
+var obs=new IntersectionObserver(function(e){e.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('on');},i*55);obs.unobserve(e.target);}});},{threshold:.1});
+els.forEach(function(el){obs.observe(el);});
+function handleRev(e){e.preventDefault();document.getElementById('revOk').classList.add('show');e.target.reset();setTimeout(function(){document.getElementById('revOk').classList.remove('show');},7000);}
+</script></body></html>
