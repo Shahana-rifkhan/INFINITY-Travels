@@ -272,6 +272,369 @@ footer{background:var(--dk);color:rgba(255,255,255,.62);padding:72px 0 0}
 .cbtns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
 @media(max-width:1100px){.dg{grid-template-columns:1fr 1fr}.dc.tall{grid-row:auto}.pkg-g,.tg{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:repeat(2,1fr)}.si{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}.why-g{grid-template-columns:1fr}.why-vis{max-width:520px}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}section{padding:68px 0}.pkg-g,.tg{grid-template-columns:1fr}.dg{grid-template-columns:1fr}.hstats{display:none}.wfloat,.wbadge{display:none}.sc{flex-direction:column;padding:24px}.tinner{flex-wrap:wrap}.ti{flex-basis:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}}
+
+/* =====================================
+   INFINITY TRAVELS - MOBILE OPTIMIZATION
+===================================== */
+
+@media (max-width:768px){
+
+    html,body{
+        width:100%;
+        overflow-x:hidden;
+    }
+
+    .container{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    section{
+        padding:55px 0;
+    }
+
+
+    /* NAVIGATION */
+
+    .nav{
+        height:65px;
+        padding:0 18px;
+    }
+
+    .nav-logo img{
+        width:38px;
+        height:38px;
+    }
+
+    .lw .lb{
+        font-size:1rem;
+    }
+
+    .lw .lt{
+        font-size:.5rem;
+        letter-spacing:3px;
+    }
+
+    .ham{
+        display:flex;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        min-height:100vh;
+    }
+
+
+    .hc{
+        padding:110px 20px 80px;
+    }
+
+
+    .heyebrow{
+        margin-bottom:18px;
+    }
+
+    .hetxt{
+        font-size:.55rem;
+        letter-spacing:2px;
+        text-align:center;
+    }
+
+
+    .hc h1{
+        font-size:2.5rem;
+        line-height:1.15;
+        letter-spacing:-.5px;
+    }
+
+
+    .hdesc{
+        font-size:.95rem;
+        line-height:1.6;
+        margin-bottom:30px;
+    }
+
+
+    .hbtns{
+        flex-direction:column;
+        width:100%;
+    }
+
+
+    .hbtns a{
+        width:100%;
+        justify-content:center;
+    }
+
+
+
+    /* REMOVE DESKTOP STATS */
+
+    .hstats{
+        display:none;
+    }
+
+
+
+    /* TRUST BAR */
+
+    .tinner{
+        display:block;
+    }
+
+    .ti{
+        width:100%;
+        padding:20px;
+        justify-content:flex-start;
+    }
+
+
+
+    /* SEARCH BOX */
+
+    .search-s{
+        padding:35px 0;
+    }
+
+
+    .sc{
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+        padding:22px;
+        border-radius:20px;
+    }
+
+
+    .sf{
+        width:100%;
+    }
+
+
+    .sbtn{
+        width:100%;
+        justify-content:center;
+    }
+
+
+
+    /* DESTINATION GRID */
+
+    .dg{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+
+    .dc,
+    .dc.tall{
+        min-height:320px;
+        grid-row:auto;
+    }
+
+
+    .dc.tall .dimg{
+        min-height:320px;
+    }
+
+
+    .dname,
+    .dc.tall .dname{
+        font-size:1.6rem;
+    }
+
+
+    .db{
+        padding:20px;
+    }
+
+
+    .dcta{
+        opacity:1;
+        transform:none;
+    }
+
+
+
+    /* PACKAGE CARDS */
+
+    .pkg-g{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+
+    .pi{
+        height:220px;
+    }
+
+
+    .pb{
+        padding:18px;
+    }
+
+
+    .pn{
+        font-size:1.15rem;
+    }
+
+
+    .pf{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+
+    .bv{
+        width:100%;
+        justify-content:center;
+    }
+
+
+
+    /* STATS */
+
+    .sg{
+        grid-template-columns:1fr 1fr;
+    }
+
+
+    .si{
+        padding:35px 10px;
+    }
+
+
+    .sinum{
+        font-size:2.2rem;
+    }
+
+
+
+    /* WHY SECTION */
+
+    .why-g{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+
+    .wmain{
+        height:350px;
+    }
+
+
+
+    /* TESTIMONIALS */
+
+    .tg{
+        grid-template-columns:1fr;
+    }
+
+
+    .tc{
+        padding:22px;
+    }
+
+
+
+    /* CTA */
+
+    .cta-s{
+        padding:70px 0;
+    }
+
+
+    .cc{
+        padding:0 20px;
+    }
+
+
+    .cc h2{
+        font-size:2rem;
+    }
+
+
+    .cbtns{
+        flex-direction:column;
+    }
+
+
+    .cbtns a{
+        width:100%;
+        justify-content:center;
+    }
+
+
+
+    /* FOOTER */
+
+    .ft{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+
+    .fbot{
+        flex-direction:column;
+        text-align:center;
+    }
+
+
+    .flinks{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+
+
+    /* WHATSAPP */
+
+    .wf{
+        right:15px;
+        bottom:15px;
+    }
+
+
+    .wfb{
+        width:52px;
+        height:52px;
+        font-size:1.3rem;
+    }
+
+}
+
+
+
+/* SMALL PHONES */
+
+@media(max-width:400px){
+
+    .hc h1{
+        font-size:2.1rem;
+    }
+
+
+    .hst{
+        padding:8px 12px;
+    }
+
+
+    .sg{
+        grid-template-columns:1fr;
+    }
+
+
+    .dname,
+    .dc.tall .dname{
+        font-size:1.4rem;
+    }
+
+}
+  
 </style>
 </head>
 <body>
